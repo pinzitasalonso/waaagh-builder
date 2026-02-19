@@ -1,0 +1,870 @@
+{
+  "faction": "Orks",
+  "units": [
+    {
+      "id": "warboss",
+      "name": "Warboss",
+      "faction": "Orks",
+      "keywords": ["CHARACTER", "INFANTRY", "EPIC HERO", "WARBOSS", "ORK"],
+      "isEpicHero": true,
+      "isLeader": true,
+      "leaderOf": ["BOYZ", "NOBZ"],
+      "fluff": "Da biggest and da baddest Ork in da mob. If any Ork is gonna lead da WAAAGH!, it's da Warboss!",
+      "unitComposition": {
+        "minModels": 1,
+        "maxModels": 1,
+        "pointsPerUnit": 70
+      },
+      "stats": {
+        "M": "6\"",
+        "T": 5,
+        "Sv": "3+",
+        "W": 6,
+        "Ld": "6+",
+        "OC": 1,
+        "invulSave": "5+"
+      },
+      "baseWeapons": [
+        {
+          "id": "warboss_slugga",
+          "name": "Slugga",
+          "type": "Ranged",
+          "range": "12\"",
+          "attacks": "2",
+          "skill": "5+",
+          "strength": 4,
+          "ap": -1,
+          "damage": "1",
+          "abilities": ["Pistol"]
+        },
+        {
+          "id": "warboss_power_klaw",
+          "name": "Power Klaw",
+          "type": "Melee",
+          "attacks": "3",
+          "skill": "2+",
+          "strength": 10,
+          "ap": -2,
+          "damage": "2",
+          "abilities": []
+        }
+      ],
+      "wargearOptions": [
+        {
+          "id": "warboss_melee_option",
+          "name": "Melee Weapon",
+          "isGroup": true,
+          "replacementText": "Replace Power Klaw with one of the following:",
+          "replacesWeaponIds": ["warboss_power_klaw"],
+          "modelScope": "all",
+          "choices": [
+            {
+              "id": "warboss_power_klaw",
+              "name": "Power Klaw",
+              "type": "Melee",
+              "attacks": "3",
+              "skill": "2+",
+              "strength": 10,
+              "ap": -2,
+              "damage": "2",
+              "abilities": []
+            },
+            {
+              "id": "warboss_big_choppa",
+              "name": "Big Choppa",
+              "type": "Melee",
+              "attacks": "4",
+              "skill": "2+",
+              "strength": 7,
+              "ap": -1,
+              "damage": "2",
+              "abilities": []
+            },
+            {
+              "id": "warboss_kombi_weapon",
+              "name": "Kombi-weapon (Shoota profile)",
+              "type": "Ranged",
+              "range": "24\"",
+              "attacks": "2",
+              "skill": "5+",
+              "strength": 4,
+              "ap": 0,
+              "damage": "1",
+              "abilities": ["Assault"]
+            }
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "warboss_waaagh_leader",
+          "name": "Waaagh! Leader",
+          "type": "Unit",
+          "description": "While this model is leading a unit, each time a model in that unit makes an attack, re-roll a Hit roll of 1."
+        },
+        {
+          "id": "warboss_breakin_heads",
+          "name": "Breakin' Heads",
+          "type": "Unit",
+          "description": "Once per turn, when a friendly ORK unit within 6\" of this model fails a Battle-shock test, this model can use this ability. If it does, that test is treated as having been passed."
+        }
+      ]
+    },
+    {
+      "id": "boyz",
+      "name": "Boyz",
+      "faction": "Orks",
+      "keywords": ["INFANTRY", "BATTLELINE", "BOYZ", "ORK"],
+      "isEpicHero": false,
+      "isLeader": false,
+      "fluff": "Da backbone of any Ork warband. Boyz are tough, numerous, and always up for a good scrap!",
+      "unitComposition": {
+        "minModels": 10,
+        "maxModels": 20,
+        "pointsPerUnit": 80,
+        "pointsPerAdditionalModel": 8,
+        "additionalModelMin": 10
+      },
+      "stats": {
+        "M": "6\"",
+        "T": 4,
+        "Sv": "6+",
+        "W": 1,
+        "Ld": "7+",
+        "OC": 2
+      },
+      "baseWeapons": [
+        {
+          "id": "boyz_slugga",
+          "name": "Slugga",
+          "type": "Ranged",
+          "range": "12\"",
+          "attacks": "2",
+          "skill": "5+",
+          "strength": 4,
+          "ap": -1,
+          "damage": "1",
+          "abilities": ["Pistol"]
+        },
+        {
+          "id": "boyz_choppa",
+          "name": "Choppa",
+          "type": "Melee",
+          "attacks": "2",
+          "skill": "4+",
+          "strength": 4,
+          "ap": -1,
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "wargearOptions": [
+        {
+          "id": "boyz_main_weapon",
+          "name": "Main Weapons",
+          "isGroup": true,
+          "replacementText": "All models can replace their Slugga and Choppa with a Shoota:",
+          "replacesWeaponIds": ["boyz_slugga", "boyz_choppa"],
+          "modelScope": "all",
+          "choices": [
+            {
+              "id": "boyz_slugga_choppa",
+              "name": "Slugga & Choppa",
+              "type": "Melee",
+              "attacks": "2",
+              "skill": "4+",
+              "strength": 4,
+              "ap": -1,
+              "damage": "1",
+              "abilities": ["Default loadout"]
+            },
+            {
+              "id": "boyz_shoota",
+              "name": "Shoota",
+              "type": "Ranged",
+              "range": "24\"",
+              "attacks": "2",
+              "skill": "5+",
+              "strength": 4,
+              "ap": 0,
+              "damage": "1",
+              "abilities": ["Assault"]
+            }
+          ]
+        },
+        {
+          "id": "boyz_nob_upgrade",
+          "name": "Nob Upgrade",
+          "isGroup": true,
+          "replacementText": "1 model (the Nob) can replace their Choppa:",
+          "replacesWeaponIds": ["boyz_choppa"],
+          "modelScope": "one",
+          "choices": [
+            {
+              "id": "nob_choppa",
+              "name": "Choppa (default)",
+              "type": "Melee",
+              "attacks": "2",
+              "skill": "4+",
+              "strength": 4,
+              "ap": -1,
+              "damage": "1",
+              "abilities": []
+            },
+            {
+              "id": "nob_power_klaw",
+              "name": "Power Klaw",
+              "type": "Melee",
+              "attacks": "3",
+              "skill": "3+",
+              "strength": 8,
+              "ap": -2,
+              "damage": "2",
+              "abilities": []
+            },
+            {
+              "id": "nob_big_choppa",
+              "name": "Big Choppa",
+              "type": "Melee",
+              "attacks": "3",
+              "skill": "3+",
+              "strength": 6,
+              "ap": -1,
+              "damage": "2",
+              "abilities": []
+            }
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "boyz_mob_rule",
+          "name": "Mob Rule",
+          "type": "Unit",
+          "description": "Each time this unit takes a Battle-shock test, it rolls one additional D6 and discards one of the results."
+        }
+      ]
+    },
+    {
+      "id": "deff_dread",
+      "name": "Deff Dread",
+      "faction": "Orks",
+      "keywords": ["VEHICLE", "WALKER", "DEFF DREAD", "ORK"],
+      "isEpicHero": false,
+      "isLeader": false,
+      "fluff": "A lumbering mechanical monstrosity, the Deff Dread crushes foes beneath its armoured bulk while its mighty Dread Klaws tear apart tanks and infantry alike.",
+      "unitComposition": {
+        "minModels": 1,
+        "maxModels": 3,
+        "pointsPerUnit": 90,
+        "pointsPerAdditionalModel": 90,
+        "additionalModelMin": 1
+      },
+      "stats": {
+        "M": "8\"",
+        "T": 10,
+        "Sv": "3+",
+        "W": 8,
+        "Ld": "7+",
+        "OC": 3,
+        "invulSave": "5+"
+      },
+      "baseWeapons": [
+        {
+          "id": "dread_klaw_1",
+          "name": "Dread Klaw",
+          "type": "Melee",
+          "attacks": "4",
+          "skill": "3+",
+          "strength": 12,
+          "ap": -2,
+          "damage": "3",
+          "abilities": []
+        },
+        {
+          "id": "dread_klaw_2",
+          "name": "Dread Klaw",
+          "type": "Melee",
+          "attacks": "4",
+          "skill": "3+",
+          "strength": 12,
+          "ap": -2,
+          "damage": "3",
+          "abilities": []
+        }
+      ],
+      "wargearOptions": [
+        {
+          "id": "dread_weapon_slot_1",
+          "name": "Weapon Slot 1",
+          "isGroup": true,
+          "replacementText": "Replace one Dread Klaw with one of the following:",
+          "replacesWeaponIds": ["dread_klaw_1"],
+          "modelScope": "all",
+          "choices": [
+            {
+              "id": "dread_klaw_keep_1",
+              "name": "Dread Klaw",
+              "type": "Melee",
+              "attacks": "4",
+              "skill": "3+",
+              "strength": 12,
+              "ap": -2,
+              "damage": "3",
+              "abilities": []
+            },
+            {
+              "id": "dread_rokkit_1",
+              "name": "Rokkit Launcha",
+              "type": "Ranged",
+              "range": "24\"",
+              "attacks": "D3+3",
+              "skill": "5+",
+              "strength": 9,
+              "ap": -2,
+              "damage": "3",
+              "abilities": ["Blast"]
+            },
+            {
+              "id": "dread_skorcha_1",
+              "name": "Skorcha",
+              "type": "Ranged",
+              "range": "12\"",
+              "attacks": "2D6",
+              "skill": "N/A",
+              "strength": 5,
+              "ap": -1,
+              "damage": "1",
+              "abilities": ["Ignores Cover", "Torrent"]
+            },
+            {
+              "id": "dread_kustom_1",
+              "name": "Kustom Mega-blasta",
+              "type": "Ranged",
+              "range": "36\"",
+              "attacks": "D3",
+              "skill": "5+",
+              "strength": 8,
+              "ap": -4,
+              "damage": "D6",
+              "abilities": ["Hazardous"]
+            }
+          ]
+        },
+        {
+          "id": "dread_weapon_slot_2",
+          "name": "Weapon Slot 2",
+          "isGroup": true,
+          "replacementText": "Replace another Dread Klaw with one of the following:",
+          "replacesWeaponIds": ["dread_klaw_2"],
+          "modelScope": "all",
+          "choices": [
+            {
+              "id": "dread_klaw_keep_2",
+              "name": "Dread Klaw",
+              "type": "Melee",
+              "attacks": "4",
+              "skill": "3+",
+              "strength": 12,
+              "ap": -2,
+              "damage": "3",
+              "abilities": []
+            },
+            {
+              "id": "dread_rokkit_2",
+              "name": "Rokkit Launcha",
+              "type": "Ranged",
+              "range": "24\"",
+              "attacks": "D3+3",
+              "skill": "5+",
+              "strength": 9,
+              "ap": -2,
+              "damage": "3",
+              "abilities": ["Blast"]
+            },
+            {
+              "id": "dread_skorcha_2",
+              "name": "Skorcha",
+              "type": "Ranged",
+              "range": "12\"",
+              "attacks": "2D6",
+              "skill": "N/A",
+              "strength": 5,
+              "ap": -1,
+              "damage": "1",
+              "abilities": ["Ignores Cover", "Torrent"]
+            },
+            {
+              "id": "dread_kustom_2",
+              "name": "Kustom Mega-blasta",
+              "type": "Ranged",
+              "range": "36\"",
+              "attacks": "D3",
+              "skill": "5+",
+              "strength": 8,
+              "ap": -4,
+              "damage": "D6",
+              "abilities": ["Hazardous"]
+            }
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "dread_smoke",
+          "name": "Smoke",
+          "type": "Core",
+          "description": "Once per battle, at the start of your Movement phase, this VEHICLE can use its Smoke Launchers. Until the start of your next turn, ranged attacks made against this model have a -1 to their Hit rolls."
+        },
+        {
+          "id": "dread_rampage",
+          "name": "Rampage",
+          "type": "Unit",
+          "description": "Each time this model makes a melee attack, if it charged this turn, add 1 to the Attack characteristic."
+        }
+      ]
+    },
+    {
+      "id": "nobz",
+      "name": "Nobz",
+      "faction": "Orks",
+      "keywords": ["INFANTRY", "NOBZ", "ORK"],
+      "isEpicHero": false,
+      "isLeader": false,
+      "fluff": "The biggest, meanest Orks in any warband short of a Warboss. Nobz love krumping just as much as regular Boyz, but they do it much, much harder.",
+      "unitComposition": {
+        "minModels": 5,
+        "maxModels": 10,
+        "pointsPerUnit": 75,
+        "pointsPerAdditionalModel": 15,
+        "additionalModelMin": 5
+      },
+      "stats": {
+        "M": "6\"",
+        "T": 5,
+        "Sv": "4+",
+        "W": 3,
+        "Ld": "7+",
+        "OC": 1,
+        "invulSave": "5+"
+      },
+      "baseWeapons": [
+        {
+          "id": "nobz_slugga",
+          "name": "Slugga",
+          "type": "Ranged",
+          "range": "12\"",
+          "attacks": "2",
+          "skill": "5+",
+          "strength": 4,
+          "ap": -1,
+          "damage": "1",
+          "abilities": ["Pistol"]
+        },
+        {
+          "id": "nobz_choppa",
+          "name": "Choppa",
+          "type": "Melee",
+          "attacks": "3",
+          "skill": "3+",
+          "strength": 5,
+          "ap": -1,
+          "damage": "1",
+          "abilities": []
+        }
+      ],
+      "wargearOptions": [
+        {
+          "id": "nobz_melee_option",
+          "name": "Melee Weapon",
+          "isGroup": true,
+          "replacementText": "All models can replace their Choppa with one of the following:",
+          "replacesWeaponIds": ["nobz_choppa"],
+          "modelScope": "all",
+          "choices": [
+            {
+              "id": "nobz_choppa_default",
+              "name": "Choppa",
+              "type": "Melee",
+              "attacks": "3",
+              "skill": "3+",
+              "strength": 5,
+              "ap": -1,
+              "damage": "1",
+              "abilities": []
+            },
+            {
+              "id": "nobz_power_klaw",
+              "name": "Power Klaw",
+              "type": "Melee",
+              "attacks": "3",
+              "skill": "3+",
+              "strength": 10,
+              "ap": -2,
+              "damage": "2",
+              "abilities": []
+            },
+            {
+              "id": "nobz_big_choppa",
+              "name": "Big Choppa",
+              "type": "Melee",
+              "attacks": "4",
+              "skill": "3+",
+              "strength": 7,
+              "ap": -1,
+              "damage": "2",
+              "abilities": []
+            }
+          ]
+        },
+        {
+          "id": "nobz_waaagh_banner",
+          "name": "Waaagh! Banner",
+          "isGroup": true,
+          "replacementText": "1 model can carry the Waaagh! Banner:",
+          "replacesWeaponIds": [],
+          "modelScope": "one",
+          "choices": [
+            {
+              "id": "nobz_no_banner",
+              "name": "No Banner",
+              "type": "Melee",
+              "attacks": "0",
+              "skill": "-",
+              "strength": 0,
+              "ap": 0,
+              "damage": "0",
+              "abilities": ["Default"]
+            },
+            {
+              "id": "nobz_with_banner",
+              "name": "Waaagh! Banner",
+              "type": "Melee",
+              "attacks": "0",
+              "skill": "-",
+              "strength": 0,
+              "ap": 0,
+              "damage": "0",
+              "abilities": ["+1 Attacks to friendly ORK INFANTRY within 6\""]
+            }
+          ]
+        }
+      ],
+      "abilities": [
+        {
+          "id": "nobz_eavy_armour",
+          "name": "'Eavy Armour",
+          "type": "Unit",
+          "description": "Models in this unit have a 4+ armour save and a 5+ invulnerable save."
+        }
+      ]
+    }
+  ],
+  "detachments": [
+    {
+      "id": "war_horde",
+      "name": "War Horde",
+      "description": "The most straightforward expression of Ork warfare — an overwhelming mass of boyz charging headlong at the enemy, fuelled by barely-contained aggression.",
+      "detachmentRule": {
+        "name": "Waaagh!",
+        "description": "Once per battle, at the start of the Fight phase, you can declare a Waaagh!. Until the end of the turn, add 1 to the Attacks characteristic of models in friendly ORK INFANTRY and ORK MOUNTED units, and those units are not affected by the Battle-shock ability."
+      },
+      "enhancements": [
+        {
+          "id": "wh_warlords_kunnin",
+          "name": "Warlord's Kunnin'",
+          "cost": 20,
+          "description": "Once per phase, when a friendly ORK unit within 6\" of the bearer makes an attack, you can re-roll one Hit roll for that attack.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "wh_brutal_but_kunnin",
+          "name": "Brutal but Kunnin'",
+          "cost": 30,
+          "description": "The bearer can move through and over other models and terrain features as if they were not there, and does not suffer the penalty for Difficult Ground.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "wh_beast_snagga_spirit",
+          "name": "Beast Snagga Spirit",
+          "cost": 25,
+          "description": "Add 1 to the Strength characteristic of the bearer. In addition, the bearer's unit has the BEAST SNAGGA keyword.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "wh_surging_brutality",
+          "name": "Surging Brutality",
+          "cost": 15,
+          "description": "Add 1 to Charge rolls made for the bearer's unit.",
+          "keywords": ["CHARACTER"]
+        }
+      ],
+      "stratagems": [
+        {
+          "id": "wh_more_dakka",
+          "name": "More Dakka!",
+          "cost": 1,
+          "phase": "Shooting",
+          "type": "Battle Tactic",
+          "when": "Your Shooting phase.",
+          "target": "One ORK INFANTRY unit from your army that has not been selected to shoot this phase.",
+          "effect": "Until the end of the phase, each time a model in that unit makes a ranged attack, on an unmodified Hit roll of 6, that attack scores 1 additional hit.",
+          "restrictions": "Once per phase."
+        },
+        {
+          "id": "wh_pile_in_krump",
+          "name": "Pile In And Krump!",
+          "cost": 1,
+          "phase": "Fight",
+          "type": "Battle Tactic",
+          "when": "Your Fight phase, when an ORK unit from your army is selected to fight.",
+          "target": "That ORK unit.",
+          "effect": "Until the end of the phase, when models in that unit pile in, they can move up to 6\" instead of 3\"."
+        },
+        {
+          "id": "wh_ere_we_go",
+          "name": "'Ere We Go!",
+          "cost": 1,
+          "phase": "Charge",
+          "type": "Battle Tactic",
+          "when": "Your Charge phase, when an ORK unit from your army declares a charge.",
+          "target": "That ORK unit.",
+          "effect": "Re-roll that unit's Charge roll."
+        },
+        {
+          "id": "wh_bomb_squig",
+          "name": "Bomb Squig",
+          "cost": 2,
+          "phase": "Shooting",
+          "type": "Wargear",
+          "when": "Your Shooting phase.",
+          "target": "One ORK unit from your army that has not been selected to shoot this phase.",
+          "effect": "Select one enemy unit within 12\" of that unit and not within Engagement Range of it. Roll D6+3 dice: for each roll of 4+, that enemy unit suffers 1 mortal wound."
+        },
+        {
+          "id": "wh_unstoppable",
+          "name": "Unstoppable Green Tide",
+          "cost": 1,
+          "phase": "Morale",
+          "type": "Strategic Ploy",
+          "when": "Your Morale phase, when an ORK unit from your army takes a Battle-shock test.",
+          "target": "That ORK unit.",
+          "effect": "That unit automatically passes that Battle-shock test."
+        },
+        {
+          "id": "wh_waaagh_drums",
+          "name": "Waaagh! Drums",
+          "cost": 2,
+          "phase": "Movement",
+          "type": "Strategic Ploy",
+          "when": "The start of your Movement phase.",
+          "target": "Up to 3 ORK units from your army.",
+          "effect": "Until the end of the phase, add 2\" to the Move characteristic of those units."
+        }
+      ]
+    },
+    {
+      "id": "kult_of_speed",
+      "name": "Kult of Speed",
+      "description": "Speed is da best armour — at least dat's what da Speed Freeks say before they go zoom past da enemy and krump 'em from behind.",
+      "detachmentRule": {
+        "name": "Full Throttle",
+        "description": "SPEED FREEKS units from your army can Advance and still make a Normal move, Advance move, or charge move in the same turn. In addition, each time a SPEED FREEKS model from your army makes an attack, if the model's unit made an Advance move this turn, that attack is not affected by the penalty for Advancing and Shooting."
+      },
+      "enhancements": [
+        {
+          "id": "kos_pedal_to_metal",
+          "name": "Pedal to da Metal",
+          "cost": 20,
+          "description": "Add 2\" to the Move characteristic of the bearer.",
+          "keywords": ["CHARACTER", "SPEED FREEKS"]
+        },
+        {
+          "id": "kos_lucky_charm",
+          "name": "Deff Skull Lucky Charm",
+          "cost": 25,
+          "description": "The bearer has a 5+ invulnerable save.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "kos_kunnin_but_brutal",
+          "name": "Kunnin' but Brutal",
+          "cost": 30,
+          "description": "Once per battle, after the bearer's unit has been destroyed, if the bearer's model has not been removed from play, it can fight one more time before it is removed.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "kos_speedfreak_rush",
+          "name": "Speedfreak's Rush",
+          "cost": 15,
+          "description": "Each time the bearer makes a melee attack, if the bearer's unit charged this turn, add 1 to the Hit roll.",
+          "keywords": ["CHARACTER", "SPEED FREEKS"]
+        }
+      ],
+      "stratagems": [
+        {
+          "id": "kos_turbo_boosta",
+          "name": "Turbo Boosta",
+          "cost": 1,
+          "phase": "Movement",
+          "type": "Strategic Ploy",
+          "when": "Your Movement phase, when a SPEED FREEKS unit from your army is selected to move.",
+          "target": "That SPEED FREEKS unit.",
+          "effect": "Until the end of the phase, that unit can make an additional Advance move."
+        },
+        {
+          "id": "kos_tank_busta_bombs",
+          "name": "Tank Busta Bombs",
+          "cost": 2,
+          "phase": "Fight",
+          "type": "Wargear",
+          "when": "Your Fight phase, when an ORK unit from your army is selected to fight.",
+          "target": "That ORK unit.",
+          "effect": "Until the end of the phase, each time a model in that unit makes a melee attack against a VEHICLE unit, add 2 to the Damage characteristic of that attack."
+        },
+        {
+          "id": "kos_hit_and_run",
+          "name": "Hit and Run",
+          "cost": 1,
+          "phase": "Fight",
+          "type": "Strategic Ploy",
+          "when": "Your Fight phase, after a SPEED FREEKS unit from your army has fought.",
+          "target": "That SPEED FREEKS unit.",
+          "effect": "That unit can make a Fall Back move of up to 6\". If it does, it can still shoot this turn."
+        },
+        {
+          "id": "kos_red_wunz",
+          "name": "Da Red Wunz Go Fasta",
+          "cost": 1,
+          "phase": "Shooting",
+          "type": "Battle Tactic",
+          "when": "Your Shooting phase.",
+          "target": "One ORK VEHICLE unit from your army.",
+          "effect": "Until the end of the phase, add 6\" to the Range characteristic of ranged weapons equipped by models in that unit."
+        },
+        {
+          "id": "kos_flat_out",
+          "name": "Flat Out!",
+          "cost": 1,
+          "phase": "Fight",
+          "type": "Strategic Ploy",
+          "when": "End of your Fight phase.",
+          "target": "One SPEED FREEKS unit from your army that is within Engagement Range of one or more enemy units.",
+          "effect": "That unit can consolidate up to 6\" instead of 3\"."
+        },
+        {
+          "id": "kos_ramming_speed",
+          "name": "Ramming Speed",
+          "cost": 2,
+          "phase": "Charge",
+          "type": "Strategic Ploy",
+          "when": "Your Charge phase, when a SPEED FREEKS VEHICLE unit from your army declares a charge.",
+          "target": "That unit.",
+          "effect": "Until the end of the phase, that unit's Charge roll is considered to be 6. In addition, each time that unit makes a melee attack in the subsequent Fight phase, add 1 to the Hit roll."
+        }
+      ]
+    },
+    {
+      "id": "green_tide",
+      "name": "Green Tide",
+      "description": "A wall of green flesh and sharp metal, the Green Tide overwhelms its enemies through sheer numbers, and it seems like no matter how many you shoot down, there's always more of 'em!",
+      "detachmentRule": {
+        "name": "Sheer Weight of Numbers",
+        "description": "Each time an ORK INFANTRY model from your army makes a melee attack, if that model's unit contains 10 or more models, add 1 to the Hit roll. If that model's unit contains 15 or more models, add 1 to the Wound roll as well."
+      },
+      "enhancements": [
+        {
+          "id": "gt_eavy_armour_plating",
+          "name": "'Eavy Armour Plating",
+          "cost": 20,
+          "description": "Improve the bearer's Save characteristic by 1 (to a minimum of 3+). In addition, the bearer has a 5+ invulnerable save.",
+          "keywords": ["CHARACTER", "INFANTRY"]
+        },
+        {
+          "id": "gt_proper_killy",
+          "name": "Proper Killy",
+          "cost": 25,
+          "description": "Add 1 to the Attacks characteristic of the bearer.",
+          "keywords": ["CHARACTER"]
+        },
+        {
+          "id": "gt_warpaint",
+          "name": "Warpaint",
+          "cost": 15,
+          "description": "The first time the bearer's unit is destroyed, roll one D6: on a 3+, set that unit back up on the battlefield as if it were the start of the game, with D6+2 models.",
+          "keywords": ["CHARACTER", "INFANTRY"]
+        },
+        {
+          "id": "gt_brutal_strength",
+          "name": "Brutal Strength",
+          "cost": 30,
+          "description": "Each time the bearer makes a melee attack, re-roll the Wound roll.",
+          "keywords": ["CHARACTER"]
+        }
+      ],
+      "stratagems": [
+        {
+          "id": "gt_mob_rule",
+          "name": "Mob Rule",
+          "cost": 1,
+          "phase": "Morale",
+          "type": "Strategic Ploy",
+          "when": "Your Morale phase, when a Battle-shock test is taken for an ORK INFANTRY unit from your army.",
+          "target": "That ORK INFANTRY unit.",
+          "effect": "Roll one additional D6 and discard the lowest result. If the test is still failed, only D3 models flee instead of D6."
+        },
+        {
+          "id": "gt_ded_ard",
+          "name": "Ded 'Ard",
+          "cost": 1,
+          "phase": "Any",
+          "type": "Battle Tactic",
+          "when": "Any phase, when an ORK INFANTRY unit from your army is selected as the target of an attack.",
+          "target": "That ORK INFANTRY unit.",
+          "effect": "Until the end of the phase, each time a model in that unit would lose a wound, roll one D6: on a 4+, that wound is not lost.",
+          "restrictions": "Once per phase."
+        },
+        {
+          "id": "gt_squash_it",
+          "name": "Squash It!",
+          "cost": 2,
+          "phase": "Fight",
+          "type": "Battle Tactic",
+          "when": "Your Fight phase, when an ORK INFANTRY unit from your army is selected to fight.",
+          "target": "That ORK INFANTRY unit.",
+          "effect": "Until the end of the phase, each time a model in that unit makes a melee attack against one enemy unit, re-roll a Hit roll of 1 and re-roll a Wound roll of 1 for that attack."
+        },
+        {
+          "id": "gt_crush_em",
+          "name": "Crush 'Em!",
+          "cost": 1,
+          "phase": "Fight",
+          "type": "Battle Tactic",
+          "when": "Your Fight phase, when an ORK INFANTRY unit from your army is selected to fight.",
+          "target": "That ORK INFANTRY unit.",
+          "effect": "Until the end of the phase, add 1 to the Damage characteristic of melee weapons equipped by models in that unit."
+        },
+        {
+          "id": "gt_call_da_waaagh",
+          "name": "Call da Waaagh!",
+          "cost": 2,
+          "phase": "Movement",
+          "type": "Epic Deed",
+          "when": "The start of your Movement phase.",
+          "target": "Up to 3 ORK INFANTRY units from your army.",
+          "effect": "Each of those units can make an Advance move of 6\" without rolling the dice."
+        },
+        {
+          "id": "gt_rampage",
+          "name": "Rampage!",
+          "cost": 1,
+          "phase": "Fight",
+          "type": "Battle Tactic",
+          "when": "Your Fight phase, when an ORK INFANTRY unit from your army with 20 or more models is selected to fight.",
+          "target": "That ORK INFANTRY unit.",
+          "effect": "Until the end of the phase, add 2 to the Attacks characteristic of melee weapons equipped by models in that unit."
+        }
+      ]
+    }
+  ]
+}
